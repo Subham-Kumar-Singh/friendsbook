@@ -4,7 +4,6 @@ from .utils import get_random_code
 from django.template.defaultfilters import slugify
 # Create your models here.
 
-
 class Profile(models.Model):
     first_name = models.CharField(max_length=70, blank=True)
     last_name = models.CharField(max_length=100, blank=True)
@@ -23,7 +22,7 @@ class Profile(models.Model):
 
     def __str__(self):
         return f"{self.user.username}-{self.created}"
-
+    
     # this funtion will be taking care of the slug item in the models
     def save(self, *args, **kwargs):
         ex = False
